@@ -1,0 +1,667 @@
+   1               		.file	"BootloaderHID.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.Bootloader_StartUserApp,"ax",@progbits
+  17               	.global	Bootloader_StartUserApp
+  19               	Bootloader_StartUserApp:
+  20               	.LFB93:
+  21               	.LSM0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	.LSM1:
+  25 0000 1EBA      		out 62-32,__zero_reg__
+  26               	.LSM2:
+  27 0002 1ABC      		out 74-32,__zero_reg__
+  28               	.LSM3:
+  29 0004 81E0      		ldi r24,lo8(1)
+  30 0006 85BF      		out 85-32,r24
+  31               	.LSM4:
+  32 0008 15BE      		out 85-32,__zero_reg__
+  33               	.LSM5:
+  34 000a E0E0      		ldi r30,lo8(0)
+  35 000c F0E0      		ldi r31,hi8(0)
+  36 000e 0995      		icall
+  37               	.LFE93:
+  39               		.section	.text.initDisplay,"ax",@progbits
+  40               	.global	initDisplay
+  42               	initDisplay:
+  43               	.LFB98:
+  44               	.LSM6:
+  45               	/* prologue: function */
+  46               	/* frame size = 0 */
+  47               	.LSM7:
+  48 0000 209A      		sbi 36-32,0
+  49               	.LSM8:
+  50 0002 279A      		sbi 36-32,7
+  51               	.LSM9:
+  52 0004 509A      		sbi 42-32,0
+  53               	.LSM10:
+  54 0006 519A      		sbi 42-32,1
+  55               	.LSM11:
+  56 0008 549A      		sbi 42-32,4
+  57               	.LSM12:
+  58 000a 579A      		sbi 42-32,7
+  59               	.LSM13:
+  60 000c 3E9A      		sbi 39-32,6
+  61               	.LSM14:
+  62 000e 809A      		sbi 48-32,0
+  63               	.LSM15:
+  64 0010 219A      		sbi 36-32,1
+  65               	.LSM16:
+  66 0012 229A      		sbi 36-32,2
+  67               	.LSM17:
+  68 0014 239A      		sbi 36-32,3
+  69               	.LSM18:
+  70 0016 2898      		cbi 37-32,0
+  71               	.LSM19:
+  72 0018 2F98      		cbi 37-32,7
+  73               	.LSM20:
+  74 001a 5898      		cbi 43-32,0
+  75               	.LSM21:
+  76 001c 5998      		cbi 43-32,1
+  77               	.LSM22:
+  78 001e 5C98      		cbi 43-32,4
+  79               	.LSM23:
+  80 0020 5F98      		cbi 43-32,7
+  81               	.LSM24:
+  82 0022 4698      		cbi 40-32,6
+  83               	.LSM25:
+  84 0024 8898      		cbi 49-32,0
+  85               	.LSM26:
+  86 0026 2998      		cbi 37-32,1
+  87               	.LSM27:
+  88 0028 2A98      		cbi 37-32,2
+  89               	.LSM28:
+  90 002a 2B98      		cbi 37-32,3
+  91               	.LSM29:
+  92 002c E1E8      		ldi r30,lo8(129)
+  93 002e F0E0      		ldi r31,hi8(129)
+  94 0030 1082      		st Z,__zero_reg__
+  95               	.LSM30:
+  96 0032 A0E8      		ldi r26,lo8(128)
+  97 0034 B0E0      		ldi r27,hi8(128)
+  98 0036 1C92      		st X,__zero_reg__
+  99               	.LSM31:
+ 100 0038 8081      		ld r24,Z
+ 101 003a 8160      		ori r24,lo8(1)
+ 102 003c 8083      		st Z,r24
+ 103               	.LSM32:
+ 104 003e 8081      		ld r24,Z
+ 105 0040 8D7F      		andi r24,lo8(-3)
+ 106 0042 8083      		st Z,r24
+ 107               	.LSM33:
+ 108 0044 8081      		ld r24,Z
+ 109 0046 8B7F      		andi r24,lo8(-5)
+ 110 0048 8083      		st Z,r24
+ 111               	.LSM34:
+ 112 004a 8C91      		ld r24,X
+ 113 004c 8E7F      		andi r24,lo8(-2)
+ 114 004e 8C93      		st X,r24
+ 115               	.LSM35:
+ 116 0050 8C91      		ld r24,X
+ 117 0052 8D7F      		andi r24,lo8(-3)
+ 118 0054 8C93      		st X,r24
+ 119               	.LSM36:
+ 120 0056 8081      		ld r24,Z
+ 121 0058 8860      		ori r24,lo8(8)
+ 122 005a 8083      		st Z,r24
+ 123               	.LSM37:
+ 124 005c 8081      		ld r24,Z
+ 125 005e 8F7E      		andi r24,lo8(-17)
+ 126 0060 8083      		st Z,r24
+ 127               	.LSM38:
+ 128 0062 8FEF      		ldi r24,lo8(32767)
+ 129 0064 9FE7      		ldi r25,hi8(32767)
+ 130 0066 9093 8900 		sts (136)+1,r25
+ 131 006a 8093 8800 		sts 136,r24
+ 132               	.LSM39:
+ 133 006e EFE6      		ldi r30,lo8(111)
+ 134 0070 F0E0      		ldi r31,hi8(111)
+ 135 0072 8081      		ld r24,Z
+ 136 0074 8260      		ori r24,lo8(2)
+ 137 0076 8083      		st Z,r24
+ 138               	/* epilogue start */
+ 139               	.LSM40:
+ 140 0078 0895      		ret
+ 141               	.LFE98:
+ 143               		.section	.text.__vector_17,"ax",@progbits
+ 144               	.global	__vector_17
+ 146               	__vector_17:
+ 147               	.LFB99:
+ 148               	.LSM41:
+ 149 0000 1F92      		push __zero_reg__
+ 150 0002 0F92      		push r0
+ 151 0004 0FB6      		in r0,__SREG__
+ 152 0006 0F92      		push r0
+ 153 0008 1124      		clr __zero_reg__
+ 154 000a 2F93      		push r18
+ 155 000c 8F93      		push r24
+ 156 000e 9F93      		push r25
+ 157 0010 EF93      		push r30
+ 158 0012 FF93      		push r31
+ 159               	/* prologue: Signal */
+ 160               	/* frame size = 0 */
+ 161               	.LSM42:
+ 162 0014 8091 0000 		lds r24,start
+ 163 0018 8823      		tst r24
+ 164 001a 01F0      		breq .L6
+ 165               	.LSM43:
+ 166 001c 8091 0000 		lds r24,ovfcount.3942
+ 167 0020 9091 0000 		lds r25,(ovfcount.3942)+1
+ 168 0024 0196      		adiw r24,1
+ 169 0026 9093 0000 		sts (ovfcount.3942)+1,r25
+ 170 002a 8093 0000 		sts ovfcount.3942,r24
+ 171 002e 0197      		sbiw r24,1
+ 172 0030 4997      		sbiw r24,25
+ 173 0032 01F4      		brne .L6
+ 174               	.LSM44:
+ 175 0034 9091 0000 		lds r25,screenMem+7
+ 176               	.LVL0:
+ 177 0038 E0E0      		ldi r30,lo8(screenMem+6)
+ 178 003a F0E0      		ldi r31,hi8(screenMem+6)
+ 179               	.L7:
+ 180               	.LSM45:
+ 181 003c 8081      		ld r24,Z
+ 182 003e 8183      		std Z+1,r24
+ 183 0040 3197      		sbiw r30,1
+ 184               	.LSM46:
+ 185 0042 80E0      		ldi r24,hi8(screenMem-1)
+ 186 0044 E030      		cpi r30,lo8(screenMem-1)
+ 187 0046 F807      		cpc r31,r24
+ 188 0048 01F4      		brne .L7
+ 189               	.LSM47:
+ 190 004a 9183      		std Z+1,r25
+ 191               	.LSM48:
+ 192 004c 1092 0000 		sts (ovfcount.3942)+1,__zero_reg__
+ 193 0050 1092 0000 		sts ovfcount.3942,__zero_reg__
+ 194               	.L6:
+ 195               	.LSM49:
+ 196 0054 2898      		cbi 37-32,0
+ 197               	.LSM50:
+ 198 0056 2F98      		cbi 37-32,7
+ 199               	.LSM51:
+ 200 0058 5898      		cbi 43-32,0
+ 201               	.LSM52:
+ 202 005a 5998      		cbi 43-32,1
+ 203               	.LSM53:
+ 204 005c 5C98      		cbi 43-32,4
+ 205               	.LSM54:
+ 206 005e 5F98      		cbi 43-32,7
+ 207               	.LSM55:
+ 208 0060 4698      		cbi 40-32,6
+ 209               	.LSM56:
+ 210 0062 8898      		cbi 49-32,0
+ 211               	.LSM57:
+ 212 0064 8091 0000 		lds r24,activeRow.3939
+ 213 0068 90E0      		ldi r25,lo8(0)
+ 214               	.LVL1:
+ 215 006a 0196      		adiw r24,1
+ 216 006c 8770      		andi r24,lo8(7)
+ 217 006e 9070      		andi r25,hi8(7)
+ 218 0070 8093 0000 		sts activeRow.3939,r24
+ 219               	.LSM58:
+ 220 0074 E0E0      		ldi r30,lo8(screenMem+7)
+ 221 0076 F0E0      		ldi r31,hi8(screenMem+7)
+ 222 0078 E81B      		sub r30,r24
+ 223 007a F90B      		sbc r31,r25
+ 224 007c E081      		ld r30,Z
+ 225               	.LVL2:
+ 226               	.LSM59:
+ 227 007e E7FD      		sbrc r30,7
+ 228               	.LSM60:
+ 229 0080 889A      		sbi 49-32,0
+ 230               	.L8:
+ 231               	.LSM61:
+ 232 0082 E6FD      		sbrc r30,6
+ 233               	.LVL3:
+ 234               	.LSM62:
+ 235 0084 469A      		sbi 40-32,6
+ 236               	.L9:
+ 237               	.LSM63:
+ 238 0086 E5FD      		sbrc r30,5
+ 239               	.LSM64:
+ 240 0088 5F9A      		sbi 43-32,7
+ 241               	.L10:
+ 242               	.LSM65:
+ 243 008a E4FD      		sbrc r30,4
+ 244               	.LSM66:
+ 245 008c 5C9A      		sbi 43-32,4
+ 246               	.L11:
+ 247               	.LSM67:
+ 248 008e E3FD      		sbrc r30,3
+ 249               	.LSM68:
+ 250 0090 599A      		sbi 43-32,1
+ 251               	.L12:
+ 252               	.LSM69:
+ 253 0092 E2FD      		sbrc r30,2
+ 254               	.LSM70:
+ 255 0094 589A      		sbi 43-32,0
+ 256               	.L13:
+ 257               	.LSM71:
+ 258 0096 E1FD      		sbrc r30,1
+ 259               	.LSM72:
+ 260 0098 2F9A      		sbi 37-32,7
+ 261               	.L14:
+ 262               	.LSM73:
+ 263 009a E0FD      		sbrc r30,0
+ 264               	.LSM74:
+ 265 009c 289A      		sbi 37-32,0
+ 266               	.L15:
+ 267               	.LSM75:
+ 268 009e 80FF      		sbrs r24,0
+ 269 00a0 00C0      		rjmp .L16
+ 270               	.LSM76:
+ 271 00a2 299A      		sbi 37-32,1
+ 272 00a4 00C0      		rjmp .L17
+ 273               	.L16:
+ 274               	.LSM77:
+ 275 00a6 2998      		cbi 37-32,1
+ 276               	.L17:
+ 277               	.LSM78:
+ 278 00a8 81FF      		sbrs r24,1
+ 279 00aa 00C0      		rjmp .L18
+ 280               	.LSM79:
+ 281 00ac 2A9A      		sbi 37-32,2
+ 282 00ae 00C0      		rjmp .L19
+ 283               	.L18:
+ 284               	.LSM80:
+ 285 00b0 2A98      		cbi 37-32,2
+ 286               	.L19:
+ 287               	.LSM81:
+ 288 00b2 82FF      		sbrs r24,2
+ 289 00b4 00C0      		rjmp .L20
+ 290               	.LSM82:
+ 291 00b6 2B9A      		sbi 37-32,3
+ 292 00b8 00C0      		rjmp .L22
+ 293               	.L20:
+ 294               	.LSM83:
+ 295 00ba 2B98      		cbi 37-32,3
+ 296               	.L22:
+ 297               	/* epilogue start */
+ 298               	.LSM84:
+ 299 00bc FF91      		pop r31
+ 300 00be EF91      		pop r30
+ 301 00c0 9F91      		pop r25
+ 302 00c2 8F91      		pop r24
+ 303 00c4 2F91      		pop r18
+ 304 00c6 0F90      		pop r0
+ 305 00c8 0FBE      		out __SREG__,r0
+ 306 00ca 0F90      		pop r0
+ 307 00cc 1F90      		pop __zero_reg__
+ 308 00ce 1895      		reti
+ 309               	.LFE99:
+ 311               		.section	.text.EVENT_USB_Device_ControlRequest,"ax",@progbits
+ 312               	.global	EVENT_USB_Device_ControlRequest
+ 314               	EVENT_USB_Device_ControlRequest:
+ 315               	.LFB97:
+ 316               	.LSM85:
+ 317 0000 1F93      		push r17
+ 318               	/* prologue: function */
+ 319               	/* frame size = 0 */
+ 320               	.LSM86:
+ 321 0002 8091 0000 		lds r24,USB_ControlRequest
+ 322 0006 8F77      		andi r24,lo8(127)
+ 323 0008 8132      		cpi r24,lo8(33)
+ 324 000a 01F0      		breq .+2
+ 325 000c 00C0      		rjmp .L35
+ 326               	.LSM87:
+ 327 000e 8091 0000 		lds r24,USB_ControlRequest+1
+ 328 0012 8930      		cpi r24,lo8(9)
+ 329 0014 01F0      		breq .+2
+ 330 0016 00C0      		rjmp .L35
+ 331               	.LBB26:
+ 332               	.LBB27:
+ 333               	.LBB28:
+ 334               	.LSM88:
+ 335 0018 8091 E800 		lds r24,232
+ 336 001c 877F      		andi r24,lo8(-9)
+ 337 001e 8093 E800 		sts 232,r24
+ 338               	.L27:
+ 339               	.LBE28:
+ 340               	.LBE27:
+ 341               	.LBB29:
+ 342               	.LBB30:
+ 343               	.LSM89:
+ 344 0022 8091 E800 		lds r24,232
+ 345               	.LBE30:
+ 346               	.LBE29:
+ 347               	.LSM90:
+ 348 0026 82FF      		sbrs r24,2
+ 349 0028 00C0      		rjmp .L27
+ 350               	.LBB31:
+ 351               	.LBB32:
+ 352               	.LSM91:
+ 353 002a 8091 F100 		lds r24,241
+ 354               	.LSM92:
+ 355 002e 9091 F100 		lds r25,241
+ 356               	.LSM93:
+ 357 0032 AC01      		movw r20,r24
+ 358               	.LBE32:
+ 359               	.LBE31:
+ 360               	.LSM94:
+ 361 0034 8FEF      		ldi r24,hi8(-1)
+ 362 0036 4F3F      		cpi r20,lo8(-1)
+ 363 0038 5807      		cpc r21,r24
+ 364               	.LVL4:
+ 365 003a 01F4      		brne .L28
+ 366               	.LSM95:
+ 367 003c 1092 0000 		sts RunBootloader,__zero_reg__
+ 368 0040 00C0      		rjmp .L29
+ 369               	.L28:
+ 370               	.LSM96:
+ 371 0042 81E0      		ldi r24,lo8(1)
+ 372 0044 8093 0000 		sts start,r24
+ 373               	.LSM97:
+ 374 0048 83E0      		ldi r24,lo8(3)
+ 375 004a FA01      		movw r30,r20
+ 376               	/* #APP */
+ 377               	 ;  208 "BootloaderHID.c" 1
+ 378 004c 8093 5700 		sts 87, r24
+ 379 0050 E895      		spm
+ 380               		
+ 381               	 ;  0 "" 2
+ 382               	/* #NOAPP */
+ 383               	.L30:
+ 384               	.LSM98:
+ 385 0052 07B6      		in __tmp_reg__,87-32
+ 386 0054 00FC      		sbrc __tmp_reg__,0
+ 387 0056 00C0      		rjmp .L30
+ 388 0058 A0E0      		ldi r26,lo8(0)
+ 389 005a B0E0      		ldi r27,hi8(0)
+ 390               	.LBB33:
+ 391               	.LSM99:
+ 392 005c 11E0      		ldi r17,lo8(1)
+ 393               	.LVL5:
+ 394               	.L33:
+ 395               	.LBB34:
+ 396               	.LBB35:
+ 397               	.LSM100:
+ 398 005e 2091 F300 		lds r18,243
+ 399 0062 8091 F200 		lds r24,242
+ 400               	.LBE35:
+ 401               	.LBE34:
+ 402               	.LSM101:
+ 403 0066 322F      		mov r19,r18
+ 404 0068 20E0      		ldi r18,lo8(0)
+ 405 006a 90E0      		ldi r25,lo8(0)
+ 406 006c 822B      		or r24,r18
+ 407 006e 932B      		or r25,r19
+ 408 0070 892B      		or r24,r25
+ 409 0072 01F4      		brne .L31
+ 410               	.LBB36:
+ 411               	.LBB37:
+ 412               	.LSM102:
+ 413 0074 8091 E800 		lds r24,232
+ 414 0078 8B77      		andi r24,lo8(123)
+ 415 007a 8093 E800 		sts 232,r24
+ 416               	.L32:
+ 417               	.LBE37:
+ 418               	.LBE36:
+ 419               	.LBB38:
+ 420               	.LBB39:
+ 421               	.LSM103:
+ 422 007e 8091 E800 		lds r24,232
+ 423               	.LBE39:
+ 424               	.LBE38:
+ 425               	.LSM104:
+ 426 0082 82FF      		sbrs r24,2
+ 427 0084 00C0      		rjmp .L32
+ 428               	.L31:
+ 429               	.LBB40:
+ 430               	.LBB41:
+ 431               	.LSM105:
+ 432 0086 8091 F100 		lds r24,241
+ 433 008a 682F      		mov r22,r24
+ 434               	.LSM106:
+ 435 008c 8091 F100 		lds r24,241
+ 436 0090 782F      		mov r23,r24
+ 437               	.LBE41:
+ 438               	.LBE40:
+ 439               	.LSM107:
+ 440 0092 FD01      		movw r30,r26
+ 441 0094 EE0F      		lsl r30
+ 442 0096 FF1F      		rol r31
+ 443 0098 E40F      		add r30,r20
+ 444 009a F51F      		adc r31,r21
+ 445               	/* #APP */
+ 446               	 ;  222 "BootloaderHID.c" 1
+ 447 009c 0B01      		movw  r0, r22
+ 448 009e 1093 5700 		sts 87, r17
+ 449 00a2 E895      		spm
+ 450 00a4 1124      		clr  r1
+ 451               		
+ 452               	 ;  0 "" 2
+ 453               	/* #NOAPP */
+ 454 00a6 1196      		adiw r26,1
+ 455               	.LSM108:
+ 456 00a8 A034      		cpi r26,64
+ 457 00aa B105      		cpc r27,__zero_reg__
+ 458 00ac 01F4      		brne .L33
+ 459               	.LBE33:
+ 460               	.LSM109:
+ 461 00ae 85E0      		ldi r24,lo8(5)
+ 462 00b0 FA01      		movw r30,r20
+ 463               	/* #APP */
+ 464               	 ;  226 "BootloaderHID.c" 1
+ 465 00b2 8093 5700 		sts 87, r24
+ 466 00b6 E895      		spm
+ 467               		
+ 468               	 ;  0 "" 2
+ 469               	/* #NOAPP */
+ 470               	.L34:
+ 471               	.LSM110:
+ 472 00b8 07B6      		in __tmp_reg__,87-32
+ 473 00ba 00FC      		sbrc __tmp_reg__,0
+ 474 00bc 00C0      		rjmp .L34
+ 475               	.LSM111:
+ 476 00be 81E1      		ldi r24,lo8(17)
+ 477               	/* #APP */
+ 478               	 ;  230 "BootloaderHID.c" 1
+ 479 00c0 8093 5700 		sts 87, r24
+ 480 00c4 E895      		spm
+ 481               		
+ 482               	 ;  0 "" 2
+ 483               	/* #NOAPP */
+ 484               	.L29:
+ 485               	.LBB42:
+ 486               	.LBB43:
+ 487               	.LSM112:
+ 488 00c6 8091 E800 		lds r24,232
+ 489 00ca 8B77      		andi r24,lo8(123)
+ 490 00cc 8093 E800 		sts 232,r24
+ 491               	.LBE43:
+ 492               	.LBE42:
+ 493               	.LSM113:
+ 494 00d0 0E94 0000 		call Endpoint_ClearStatusStage
+ 495               	.LVL6:
+ 496               	.L35:
+ 497               	/* epilogue start */
+ 498               	.LBE26:
+ 499               	.LSM114:
+ 500 00d4 1F91      		pop r17
+ 501 00d6 0895      		ret
+ 502               	.LFE97:
+ 504               		.section	.text.EVENT_USB_Device_ConfigurationChanged,"ax",@progbits
+ 505               	.global	EVENT_USB_Device_ConfigurationChanged
+ 507               	EVENT_USB_Device_ConfigurationChanged:
+ 508               	.LFB96:
+ 509               	.LSM115:
+ 510               	/* prologue: function */
+ 511               	/* frame size = 0 */
+ 512               	.LBB44:
+ 513               	.LBB45:
+ 514               	.LSM116:
+ 515 0000 81E0      		ldi r24,lo8(1)
+ 516 0002 61EC      		ldi r22,lo8(-63)
+ 517 0004 42E3      		ldi r20,lo8(50)
+ 518 0006 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 519               	/* epilogue start */
+ 520               	.LBE45:
+ 521               	.LBE44:
+ 522               	.LSM117:
+ 523 000a 0895      		ret
+ 524               	.LFE96:
+ 526               		.section	.text.SetupHardware,"ax",@progbits
+ 527               	.global	SetupHardware
+ 529               	SetupHardware:
+ 530               	.LFB95:
+ 531               	.LSM118:
+ 532               	/* prologue: function */
+ 533               	/* frame size = 0 */
+ 534               	.LSM119:
+ 535 0000 84B7      		in r24,84-32
+ 536 0002 877F      		andi r24,lo8(-9)
+ 537 0004 84BF      		out 84-32,r24
+ 538               	.LSM120:
+ 539 0006 88E1      		ldi r24,lo8(24)
+ 540               	/* #APP */
+ 541               	 ;  136 "BootloaderHID.c" 1
+ 542 0008 0FB6      		in __tmp_reg__, __SREG__
+ 543 000a F894      		cli
+ 544 000c 8093 6000 		sts 96, r24
+ 545 0010 1092 6000 		sts 96, __zero_reg__
+ 546 0014 0FBE      		out __SREG__,__tmp_reg__
+ 547               		
+ 548               	 ;  0 "" 2
+ 549               	.LSM121:
+ 550               	/* #NOAPP */
+ 551 0016 8EB3      		in r24,62-32
+ 552 0018 8C3D      		cpi r24,lo8(-36)
+ 553 001a 01F4      		brne .L44
+ 554 001c 8AB5      		in r24,74-32
+ 555 001e 863A      		cpi r24,lo8(-90)
+ 556 0020 01F4      		brne .L44
+ 557               	.LBB46:
+ 558               	.LSM122:
+ 559 0022 E0E0      		ldi r30,lo8(0)
+ 560 0024 F0E0      		ldi r31,hi8(0)
+ 561 0026 0995      		icall
+ 562               	.L44:
+ 563               	.LBE46:
+ 564               	.LSM123:
+ 565 0028 81E0      		ldi r24,lo8(1)
+ 566 002a 85BF      		out 85-32,r24
+ 567               	.LSM124:
+ 568 002c 82E0      		ldi r24,lo8(2)
+ 569 002e 85BF      		out 85-32,r24
+ 570               	.LSM125:
+ 571 0030 0E94 0000 		call initDisplay
+ 572               	.LSM126:
+ 573 0034 0E94 0000 		call USB_Init
+ 574               	/* epilogue start */
+ 575               	.LSM127:
+ 576 0038 0895      		ret
+ 577               	.LFE95:
+ 579               		.section	.text.main,"ax",@progbits
+ 580               	.global	main
+ 582               	main:
+ 583               	.LFB94:
+ 584               	.LSM128:
+ 585               	/* prologue: function */
+ 586               	/* frame size = 0 */
+ 587               	.LSM129:
+ 588 0000 0E94 0000 		call SetupHardware
+ 589               	.LSM130:
+ 590 0004 219A      		sbi 36-32,1
+ 591               	.LSM131:
+ 592 0006 6A9A      		sbi 45-32,2
+ 593               	.LSM132:
+ 594 0008 729A      		sbi 46-32,2
+ 595               	.LSM133:
+ 596               	/* #APP */
+ 597               	 ;  95 "BootloaderHID.c" 1
+ 598 000a 7894      		sei
+ 599               	 ;  0 "" 2
+ 600               	.LSM134:
+ 601               	/* #NOAPP */
+ 602 000c 1092 0000 		sts screenMem,__zero_reg__
+ 603               	.LSM135:
+ 604 0010 88E1      		ldi r24,lo8(24)
+ 605 0012 8093 0000 		sts screenMem+1,r24
+ 606               	.LSM136:
+ 607 0016 8093 0000 		sts screenMem+2,r24
+ 608               	.LSM137:
+ 609 001a 8093 0000 		sts screenMem+3,r24
+ 610               	.LSM138:
+ 611 001e 9EE7      		ldi r25,lo8(126)
+ 612 0020 9093 0000 		sts screenMem+4,r25
+ 613               	.LSM139:
+ 614 0024 9CE3      		ldi r25,lo8(60)
+ 615 0026 9093 0000 		sts screenMem+5,r25
+ 616               	.LSM140:
+ 617 002a 8093 0000 		sts screenMem+6,r24
+ 618               	.LSM141:
+ 619 002e 1092 0000 		sts screenMem+7,__zero_reg__
+ 620 0032 00C0      		rjmp .L47
+ 621               	.L49:
+ 622               	.LSM142:
+ 623 0034 6299      		sbic 44-32,2
+ 624 0036 00C0      		rjmp .L48
+ 625               	.LSM143:
+ 626 0038 1092 0000 		sts RunBootloader,__zero_reg__
+ 627               	.L48:
+ 628               	.LSM144:
+ 629 003c 0E94 0000 		call USB_USBTask
+ 630               	.L47:
+ 631               	.LSM145:
+ 632 0040 8091 0000 		lds r24,RunBootloader
+ 633 0044 8823      		tst r24
+ 634 0046 01F4      		brne .L49
+ 635               	.LSM146:
+ 636 0048 1092 0000 		sts start,__zero_reg__
+ 637               	.LSM147:
+ 638 004c 0E94 0000 		call USB_Disable
+ 639               	.LSM148:
+ 640 0050 0E94 0000 		call Bootloader_StartUserApp
+ 641               	.L50:
+ 642 0054 00C0      		rjmp .L50
+ 643               	.LFE94:
+ 645               	.global	start
+ 646               	.global	start
+ 647               		.section .bss
+ 650               	start:
+ 651 0000 00        		.skip 1,0
+ 652               		.lcomm ovfcount.3942,2
+ 653               		.lcomm activeRow.3939,1
+ 654               		.data
+ 657               	RunBootloader:
+ 658 0000 01        		.byte	1
+ 659               		.comm screenMem,8,1
+ 660               		.comm CurrAddress,4,1
+ 733               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 BootloaderHID.c
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:2      *ABS*:0000003f __SREG__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:3      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:4      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:5      *ABS*:00000034 __CCP__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:19     .text.Bootloader_StartUserApp:00000000 Bootloader_StartUserApp
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:42     .text.initDisplay:00000000 initDisplay
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:146    .text.__vector_17:00000000 __vector_17
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:650    .bss:00000000 start
+                             .bss:00000001 ovfcount.3942
+                            *COM*:00000008 screenMem
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:652    .bss:00000003 activeRow.3939
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:314    .text.EVENT_USB_Device_ControlRequest:00000000 EVENT_USB_Device_ControlRequest
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:657    .data:00000000 RunBootloader
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:507    .text.EVENT_USB_Device_ConfigurationChanged:00000000 EVENT_USB_Device_ConfigurationChanged
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:529    .text.SetupHardware:00000000 SetupHardware
+C:\DOCUME~1\Alan\CONFIG~1\Temp/ccR0oGpD.s:582    .text.main:00000000 main
+                            *COM*:00000004 CurrAddress
+
+UNDEFINED SYMBOLS
+USB_ControlRequest
+Endpoint_ClearStatusStage
+Endpoint_ConfigureEndpoint_Prv
+USB_Init
+USB_USBTask
+USB_Disable
+__do_copy_data
+__do_clear_bss

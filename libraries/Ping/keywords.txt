@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map For Ping class
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PingSensor	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setPin	KEYWORD2
+getPin	KEYWORD2
+measureCM	KEYWORD2
+measureInches	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+

@@ -1,0 +1,53 @@
+#######################################
+# Syntax Coloring Map For LEDMatrix8x8 class
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LedMatrix8x8	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+refresh	KEYWORD2
+clearScreen	KEYWORD2
+setPixel	KEYWORD2
+clearPixel	KEYWORD2
+setTextScrollDelay	KEYWORD2
+getTextScrollDelay	KEYWORD2
+setAnimationScrollDelay KEYWORD2
+getAnimationScrollDelay	KEYWORD2
+scrollLeft	KEYWORD2
+scrollRight	KEYWORD2
+print	KEYWORD2
+showSprite	KEYWORD2
+scrollAnimation	KEYWORD2
+setOrientation	KEYWORD2
+getOrientation	KEYWORD2
+putChar	KEYWORD2
+putNumber	KEYWORD2
+setInverted	KEYWORD2
+getInverted	KEYWORD2
+scrollUp	KEYWORD2
+scrollDown	KEYWORD2
+setBar	KEYWORD2
+getBar	KEYWORD2
+showBars	KEYWORD2	
+showAllBars	KEYWORD2	
+
+#######################################
+# Preinstanced objects (KEYWORD3)
+#######################################
+Screen	KEYWORD3
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+screenUp	LITERAL1
+screenDown	LITERAL1
+screenInverted	LITERAL1
+screenNormal	LITERAL1
+
