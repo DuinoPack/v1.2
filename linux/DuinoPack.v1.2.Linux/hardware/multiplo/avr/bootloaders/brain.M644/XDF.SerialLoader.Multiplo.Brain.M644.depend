@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1266974994 source:c:\projects\xdf\components\ifds\_dev\v0_2\apps\bootloaders\serial\multiplo.m644p\source\main.cpp
+	<inttypes.h>
+	<avr/io.h>
+	<avr/pgmspace.h>
+	<avr/interrupt.h>
+	<avr/wdt.h>
+	<util/delay.h>
+	<stdlib.h>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="XDF.SerialLoader.Multiplo.Brain.M644.cbp" active="1" />
+		<Project filename="../../../../../../../../SNAPI/_Dev/_Experiments/Multiplo.BrainM1284/Test.M644.Daireaux/28.Motors.STK500Bootloader/Project.cbp" />
+		<Project filename="../../../../../../../../SNAPI/_Dev/_Experiments/Multiplo.BrainM1284/Test.M644.Daireaux/29.ReadSensors.STK500Bootloader/Project.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
