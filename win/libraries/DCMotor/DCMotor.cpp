@@ -2,12 +2,12 @@
 
 	A small DC motor control class.
 
-	Copyright (C) 2010-2012 Multiplo
+	Copyright (C) 2010-2013 Multiplo
 	http://robotgroup.com.ar
 	http://multiplo.org
 	Developers: Julián U. da Silva Gillig
 	Created: 2010.04.06 (yyyy.mm.dd)
-	Last modified: 2013.15.06 (yyyy.mm.dd)
+	Last modified: 2013.09.15 (yyyy.mm.dd)
 
 	IMPORTANT NOTICE: This library is based on code from the SNAPI library, which is under The Multiplo
 	Pacifist License (MPL). This license is (or may be) not compatible with the GNU Lesser General Public
