@@ -1,0 +1,268 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x110c5f80, pid=6136, tid=2640
+#
+# JRE version: 6.0_16-b01
+# Java VM: Java HotSpot(TM) Client VM (14.2-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x110c5f80
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02413400):  JavaThread "Finalizer" daemon [_thread_in_native, id=2640, stack(0x10680000,0x106d0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x110c5f80
+
+Registers:
+EAX=0x110c5f80, EBX=0x0c8b7f00, ECX=0x02413510, EDX=0x0c91f068
+ESP=0x106cf82c, EBP=0x106cf860, ESI=0x0c8b7f00, EDI=0x02413400
+EIP=0x110c5f80, EFLAGS=0x00010283
+
+Top of Stack: (sp=0x106cf82c)
+0x106cf82c:   02489e37 02413510 106cf868 0022a888
+0x106cf83c:   00000000 106cf840 00000000 106cf874
+0x106cf84c:   0c91f068 00000000 0c8b7f00 00000000
+0x106cf85c:   106cf870 106cf898 02482da1 0c8b8250
+0x106cf86c:   02488269 0022a888 00000000 106cf878
+0x106cf87c:   0c8b60ad 106cf8a0 0c91f068 00000000
+0x106cf88c:   0c8b60d0 106cf870 106cf8a0 106cf8b4
+0x106cf89c:   024802cb 04e51118 00001f80 02480266 
+
+Instructions: (pc=0x110c5f80)
+0x110c5f70:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xc0000005]
+
+Stack: [0x10680000,0x106d0000],  sp=0x106cf82c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x110c5f80
+j  com.sun.jna.Memory.finalize()V+13
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecf9c]
+V  [jvm.dll+0x1741e1]
+V  [jvm.dll+0xed01d]
+V  [jvm.dll+0xf5e2f]
+V  [jvm.dll+0xf8b24]
+C  [java.dll+0x2115]
+j  java.lang.ref.Finalizer.runFinalizer()V+45
+j  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V+1
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0xecf9c]
+V  [jvm.dll+0x1741e1]
+V  [jvm.dll+0xed167]
+V  [jvm.dll+0xed1dd]
+V  [jvm.dll+0x116290]
+V  [jvm.dll+0x1d0424]
+V  [jvm.dll+0x173e5c]
+C  [msvcr71.dll+0x9565]
+C  [kernel32.dll+0x1336a]
+C  [ntdll.dll+0x39f72]
+C  [ntdll.dll+0x39f45]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.jna.Memory.free(J)V+0
+j  com.sun.jna.Memory.finalize()V+13
+v  ~StubRoutines::call_stub
+j  java.lang.ref.Finalizer.invokeFinalizeMethod(Ljava/lang/Object;)V+0
+j  java.lang.ref.Finalizer.runFinalizer()V+45
+j  java.lang.ref.Finalizer.access$100(Ljava/lang/ref/Finalizer;)V+1
+j  java.lang.ref.Finalizer$FinalizerThread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x1368b400 JavaThread "Thread-1" daemon [_thread_in_native, id=7396, stack(0x13db0000,0x13e00000)]
+  0x0018a000 JavaThread "DestroyJavaVM" [_thread_blocked, id=644, stack(0x00230000,0x00280000)]
+  0x135cf800 JavaThread "TimerQueue" daemon [_thread_blocked, id=3528, stack(0x15590000,0x155e0000)]
+  0x135b8c00 JavaThread "Swing-Shell" daemon [_thread_blocked, id=1084, stack(0x11170000,0x111c0000)]
+  0x109f5c00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=5560, stack(0x13790000,0x137e0000)]
+  0x0241bc00 JavaThread "AWT-Shutdown" [_thread_blocked, id=4572, stack(0x13700000,0x13750000)]
+  0x109cd000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=4236, stack(0x10f20000,0x10f70000)]
+  0x109c7800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=4108, stack(0x10dc0000,0x10e10000)]
+  0x02450000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=4228, stack(0x108c0000,0x10910000)]
+  0x0244e000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2372, stack(0x10830000,0x10880000)]
+  0x0244d800 JavaThread "Attach Listener" daemon [_thread_blocked, id=2860, stack(0x107a0000,0x107f0000)]
+  0x02443000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4224, stack(0x10710000,0x10760000)]
+=>0x02413400 JavaThread "Finalizer" daemon [_thread_in_native, id=2640, stack(0x10680000,0x106d0000)]
+  0x02411c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2592, stack(0x105f0000,0x10640000)]
+
+Other Threads:
+  0x0240d000 VMThread [stack: 0x10560000,0x105b0000] [id=2344]
+  0x02459000 WatcherThread [stack: 0x10950000,0x109a0000] [id=2744]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 9088K, used 327K [0x04480000, 0x04e50000, 0x04e50000)
+  eden space 8128K,   4% used [0x04480000, 0x044d1de0, 0x04c70000)
+  from space 960K,   0% used [0x04d60000, 0x04d60000, 0x04e50000)
+  to   space 960K,   0% used [0x04c70000, 0x04c70000, 0x04d60000)
+ tenured generation   total 121024K, used 35606K [0x04e50000, 0x0c480000, 0x0c480000)
+   the space 121024K,  29% used [0x04e50000, 0x071158c0, 0x07115a00, 0x0c480000)
+ compacting perm gen  total 15872K, used 15762K [0x0c480000, 0x0d400000, 0x10480000)
+   the space 15872K,  99% used [0x0c480000, 0x0d3e4a10, 0x0d3e4c00, 0x0d400000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\javaw.exe
+0x77bd0000 - 0x77d50000 	C:\windows\SysWOW64\ntdll.dll
+0x76ea0000 - 0x76fb0000 	C:\windows\syswow64\kernel32.dll
+0x76770000 - 0x767b7000 	C:\windows\syswow64\KERNELBASE.dll
+0x75830000 - 0x758d0000 	C:\windows\syswow64\ADVAPI32.dll
+0x77410000 - 0x774bc000 	C:\windows\syswow64\msvcrt.dll
+0x758d0000 - 0x758e9000 	C:\windows\SysWOW64\sechost.dll
+0x76a40000 - 0x76b30000 	C:\windows\syswow64\RPCRT4.dll
+0x755f0000 - 0x75650000 	C:\windows\syswow64\SspiCli.dll
+0x755e0000 - 0x755ec000 	C:\windows\syswow64\CRYPTBASE.dll
+0x76c60000 - 0x76d60000 	C:\windows\syswow64\USER32.dll
+0x77720000 - 0x777b0000 	C:\windows\syswow64\GDI32.dll
+0x77550000 - 0x7755a000 	C:\windows\syswow64\LPK.dll
+0x75790000 - 0x7582d000 	C:\windows\syswow64\USP10.dll
+0x76710000 - 0x76770000 	C:\windows\system32\IMM32.DLL
+0x767c0000 - 0x7688c000 	C:\windows\syswow64\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\msvcr71.dll
+0x6d8b0000 - 0x6db3b000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\client\jvm.dll
+0x71b80000 - 0x71bb2000 	C:\windows\system32\WINMM.dll
+0x73970000 - 0x739bc000 	C:\windows\system32\apphelp.dll
+0x6d860000 - 0x6d86c000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\java.dll
+0x6d340000 - 0x6d348000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\hpi.dll
+0x76fe0000 - 0x76fe5000 	C:\windows\syswow64\PSAPI.DLL
+0x6d8a0000 - 0x6d8af000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\zip.dll
+0x6d0b0000 - 0x6d1fa000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\awt.dll
+0x73850000 - 0x738a1000 	C:\windows\system32\WINSPOOL.DRV
+0x775c0000 - 0x7771c000 	C:\windows\syswow64\ole32.dll
+0x72d90000 - 0x72f2e000 	C:\windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\comctl32.dll
+0x773b0000 - 0x77407000 	C:\windows\syswow64\SHLWAPI.dll
+0x6fe50000 - 0x6fe63000 	C:\windows\system32\DWMAPI.DLL
+0x72fb0000 - 0x73030000 	C:\windows\system32\uxtheme.dll
+0x71cc0000 - 0x71cd1000 	C:\ProgramData\RealNetworks\RealDownloader\BrowserPlugins\Chrome\Hook\rndlchrome10browserrecordhelper.dll
+0x72a80000 - 0x72b3f000 	C:\windows\system32\MSVCR100.dll
+0x758f0000 - 0x7653a000 	C:\windows\syswow64\SHELL32.dll
+0x74240000 - 0x742a9000 	C:\windows\system32\MSVCP100.dll
+0x73810000 - 0x73826000 	C:\windows\system32\CRYPTSP.dll
+0x737c0000 - 0x737fb000 	C:\windows\system32\rsaenh.dll
+0x738c0000 - 0x738d7000 	C:\windows\system32\USERENV.dll
+0x738b0000 - 0x738bb000 	C:\windows\system32\profapi.dll
+0x6d6c0000 - 0x6d6d3000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\net.dll
+0x76c20000 - 0x76c55000 	C:\windows\syswow64\WS2_32.dll
+0x76c10000 - 0x76c16000 	C:\windows\syswow64\NSI.dll
+0x72310000 - 0x7234c000 	C:\windows\system32\mswsock.dll
+0x72300000 - 0x72306000 	C:\windows\System32\wship6.dll
+0x72260000 - 0x72270000 	C:\windows\system32\NLAapi.dll
+0x6c610000 - 0x6c620000 	C:\windows\system32\napinsp.dll
+0x6c560000 - 0x6c572000 	C:\windows\system32\pnrpnsp.dll
+0x754f0000 - 0x75534000 	C:\windows\system32\DNSAPI.dll
+0x6c550000 - 0x6c558000 	C:\windows\System32\winrnr.dll
+0x6c540000 - 0x6c54d000 	C:\windows\system32\wshbth.dll
+0x754e0000 - 0x754e5000 	C:\windows\System32\wshtcpip.dll
+0x731c0000 - 0x731dc000 	C:\windows\system32\IPHLPAPI.DLL
+0x731b0000 - 0x731b7000 	C:\windows\system32\WINNSI.DLL
+0x75540000 - 0x75546000 	C:\windows\system32\rasadhlp.dll
+0x753b0000 - 0x753e8000 	C:\windows\System32\fwpuclnt.dll
+0x6d2e0000 - 0x6d334000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\fontmanager.dll
+0x11590000 - 0x11753000 	C:\windows\system32\d3d9.dll
+0x72c70000 - 0x72c79000 	C:\windows\system32\VERSION.dll
+0x74230000 - 0x74236000 	C:\windows\system32\d3d8thk.dll
+0x740a0000 - 0x740a8000 	C:\windows\system32\atiu9pag.dll
+0x6bca0000 - 0x6c02e000 	C:\windows\system32\atiumdag.dll
+0x74420000 - 0x74712000 	C:\windows\system32\atiumdva.dll
+0x6d6e0000 - 0x6d6e9000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\nio.dll
+0x6d500000 - 0x6d524000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\jpeg.dll
+0x6d250000 - 0x6d273000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin\dcpr.dll
+0x76df0000 - 0x76e7f000 	C:\windows\syswow64\OLEAUT32.dll
+0x77210000 - 0x773ad000 	C:\windows\syswow64\SETUPAPI.dll
+0x76be0000 - 0x76c07000 	C:\windows\syswow64\CFGMGR32.dll
+0x777b0000 - 0x777c2000 	C:\windows\syswow64\DEVOBJ.dll
+0x76b30000 - 0x76bb3000 	C:\windows\syswow64\CLBCatQ.DLL
+0x71bc0000 - 0x71cb5000 	C:\windows\system32\propsys.dll
+0x72c30000 - 0x72c51000 	C:\windows\system32\ntmarta.dll
+0x769f0000 - 0x76a35000 	C:\windows\syswow64\WLDAP32.dll
+0x642e0000 - 0x64478000 	C:\windows\system32\NetworkExplorer.dll
+0x74340000 - 0x7436f000 	C:\windows\System32\shdocvw.dll
+0x740b0000 - 0x740ba000 	C:\windows\system32\slc.dll
+0x68ce0000 - 0x68e10000 	C:\windows\system32\WindowsCodecs.dll
+0x68bf0000 - 0x68c02000 	C:\Program Files (x86)\Common Files\TortoiseOverlays\TortoiseOverlays.dll
+0x68be0000 - 0x68bed000 	C:\Program Files\TortoiseSVN\bin\TortoiseStub32.dll
+0x68c70000 - 0x68cdb000 	C:\Program Files\TortoiseSVN\bin\TortoiseSVN32.dll
+0x76540000 - 0x76704000 	C:\windows\syswow64\WININET.dll
+0x76e80000 - 0x76e84000 	C:\windows\syswow64\api-ms-win-downlevel-user32-l1-1-0.dll
+0x76bd0000 - 0x76bd4000 	C:\windows\syswow64\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+0x76d60000 - 0x76d64000 	C:\windows\syswow64\api-ms-win-downlevel-version-l1-1-0.dll
+0x76890000 - 0x76893000 	C:\windows\syswow64\api-ms-win-downlevel-normaliz-l1-1-0.dll
+0x76e90000 - 0x76e93000 	C:\windows\syswow64\normaliz.DLL
+0x76ff0000 - 0x77205000 	C:\windows\syswow64\iertutil.dll
+0x75780000 - 0x75785000 	C:\windows\syswow64\api-ms-win-downlevel-advapi32-l1-1-0.dll
+0x688f0000 - 0x68be0000 	C:\Program Files\TortoiseSVN\bin\libsvn_tsvn32.dll
+0x688c0000 - 0x688e4000 	C:\Program Files\TortoiseSVN\bin\libapr_tsvn32.dll
+0x68810000 - 0x68846000 	C:\Program Files\TortoiseSVN\bin\libaprutil_tsvn32.dll
+0x68800000 - 0x6880d000 	C:\Program Files\TortoiseSVN\bin\intl3_tsvn32.dll
+0x687e0000 - 0x687f3000 	C:\Program Files\TortoiseSVN\bin\libsasl32.dll
+0x733e0000 - 0x733e8000 	C:\windows\system32\Secur32.dll
+0x768d0000 - 0x769f0000 	C:\windows\syswow64\CRYPT32.dll
+0x77ba0000 - 0x77bac000 	C:\windows\syswow64\MSASN1.dll
+0x14b80000 - 0x14ba2000 	C:\Users\Julian\AppData\Roaming\Dropbox\bin\DropboxExt.19.dll
+0x72b40000 - 0x72c2b000 	C:\windows\system32\dbghelp.dll
+0x739c0000 - 0x73a4e000 	C:\windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCP90.dll
+0x73a50000 - 0x73af3000 	C:\windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCR90.dll
+0x68620000 - 0x68651000 	C:\windows\system32\EhStorShell.dll
+0x73830000 - 0x73842000 	C:\windows\system32\MPR.dll
+0x6c040000 - 0x6c048000 	C:\windows\System32\drprov.dll
+0x73070000 - 0x73099000 	C:\windows\System32\WINSTA.dll
+0x64600000 - 0x64614000 	C:\windows\System32\ntlanman.dll
+0x645e0000 - 0x645f7000 	C:\windows\System32\davclnt.dll
+0x6c030000 - 0x6c038000 	C:\windows\System32\DAVHLPR.dll
+0x730f0000 - 0x730ff000 	C:\windows\system32\wkscli.dll
+0x72c60000 - 0x72c6b000 	C:\windows\system32\cscapi.dll
+0x73120000 - 0x73129000 	C:\windows\system32\netutils.dll
+0x63320000 - 0x63558000 	C:\windows\system32\wpdshext.dll
+0x74ce0000 - 0x74e70000 	C:\windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.18120_none_72d2e82386681b36\gdiplus.dll
+0x6ba10000 - 0x6ba99000 	C:\windows\system32\PortableDeviceApi.dll
+0x768a0000 - 0x768ce000 	C:\windows\syswow64\WINTRUST.dll
+0x64560000 - 0x6459f000 	C:\windows\system32\audiodev.dll
+0x630b0000 - 0x63317000 	C:\windows\system32\WMVCore.DLL
+0x645a0000 - 0x645dd000 	C:\windows\system32\WMASF.DLL
+0x64530000 - 0x64552000 	C:\windows\system32\EhStorAPI.dll
+0x74770000 - 0x74779000 	C:\windows\system32\LINKINFO.dll
+0x73050000 - 0x7305f000 	C:\windows\system32\samcli.dll
+0x73030000 - 0x73042000 	C:\windows\system32\SAMLIB.dll
+0x153b0000 - 0x153c2000 	C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\rxtxSerial.dll
+0x6c240000 - 0x6c267000 	C:\windows\system32\crtdll.dll
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx128m 
+java_command: processing.app.Base
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Apps\Java\jdk1.7.0_06
+PATH=C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\;C:\Program Files (x86)\Toshiba\Bluetooth Toshiba Stack\sys\x64\;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter\Driver;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\CMake 2.8\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;;C:\propgcc\bin;C:\Apps\Python27;C:\Install\Microsoft;C:\Apps\OpenCV.2.4.3\release\bin;C:\Apps\OpenCV.2.4.3\debug\bin;C:\Projects\Multiplo\soft\miniBloq\v0.9x\libs\opencv\v2.4.3\release\bin;C:\Projects\Multiplo\soft\miniBloq\v0.9x\libs\opencv\v2.4.3\debug\bin;C:\Projects\multiplo\soft\DuinoPack\v1.2\v1.2\win\java\bin
+USERNAME=Julian
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 16 Model 5 Stepping 3, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 3 (3 cores per cpu, 1 threads per core) family 16 model 5 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, mmxext, 3dnow, 3dnowext, sse4a
+
+Memory: 4k page, physical 3927736k(1038316k free), swap 4194303k(4045148k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.2-b01) for windows-x86 JRE (1.6.0_16-b01), built on Jul 31 2009 11:26:58 by "java_re" with MS VC++ 7.1
+
+time: Tue Dec 10 23:43:08 2013
+elapsed time: 20835 seconds
+
