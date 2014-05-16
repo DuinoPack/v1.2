@@ -49,6 +49,7 @@
 #define DIGITAL_INPUT_REQUEST 0x07
 #define CHANGE_ROBOT_ID 0x08
 #define BROADCAST_REPORT 0x09
+#define MOVE_SERVO 0x0A
 //end DuinoBot
 
 // extended command set using sysex (0-127/0x00-0x7F)
