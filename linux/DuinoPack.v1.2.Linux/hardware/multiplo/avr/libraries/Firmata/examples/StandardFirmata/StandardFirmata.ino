@@ -30,7 +30,7 @@
  */
 
 #include <Servo.h>
-#include <Wire.h>
+//#include <Wire.h>
 #include <Firmata.h>
 
 // move the following defines to Firmata.h?
