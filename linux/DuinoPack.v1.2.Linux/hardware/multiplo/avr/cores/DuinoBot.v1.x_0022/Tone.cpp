@@ -105,9 +105,9 @@ static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 /*, 255 */ };
 #elif defined(__AVR_ATmega32U4__)
  
 #define AVAILABLE_TONE_PINS 1
-#define USE_TIMER2
+#define USE_TIMER3
  
-const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 2 /*, 1 */ };
+const uint8_t PROGMEM tone_pin_to_timer_PGM[] = { 3 /*, 1 */ };
 static uint8_t tone_pins[AVAILABLE_TONE_PINS] = { 255 /*, 255 */ };
  
 #else
