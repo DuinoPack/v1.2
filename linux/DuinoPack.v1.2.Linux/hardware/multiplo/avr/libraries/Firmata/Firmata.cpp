@@ -13,7 +13,6 @@
 //******************************************************************************
 //* Includes
 //******************************************************************************
-
 #include "Firmata.h"
 #include "HardwareSerial.h"
 
@@ -65,8 +64,8 @@ void FirmataClass::begin(void)
 /* begin method for overriding default serial bitrate */
 void FirmataClass::begin(long speed)
 {
-  Serial.begin(speed);
-  FirmataSerial = Serial;
+  Serial1.begin(speed);
+  FirmataSerial = Serial1;
   blinkVersion();
   printVersion();
   printFirmwareVersion();
@@ -439,6 +438,6 @@ void FirmataClass::pin13strobe(int count, int onInterval, int offInterval)
 
 
 // make one instance for the user to use
-FirmataClass Firmata(Serial);
+FirmataClass Firmata(Serial1);
 
 

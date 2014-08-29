@@ -39,6 +39,19 @@
 #define START_SYSEX             0xF0 // start a MIDI Sysex message
 #define END_SYSEX               0xF7 // end a MIDI Sysex message
 
+//begin DuinoBot
+#define MOTOR_0_COMMAND 0x01
+#define MOTOR_1_COMMAND 0x02
+#define PING_COMMAND 0x03
+#define MOTOR_COMMAND 0x04
+#define TONE_COMMAND 0x05
+#define ANALOG_INPUT_REQUEST 0x06
+#define DIGITAL_INPUT_REQUEST 0x07
+#define CHANGE_ROBOT_ID 0x08
+#define BROADCAST_REPORT 0x09
+#define MOVE_SERVO 0x0A
+//end DuinoBot
+
 // extended command set using sysex (0-127/0x00-0x7F)
 /* 0x00-0x0F reserved for user-defined commands */
 #define SERVO_CONFIG            0x70 // set max angle, minPulse, maxPulse, freq

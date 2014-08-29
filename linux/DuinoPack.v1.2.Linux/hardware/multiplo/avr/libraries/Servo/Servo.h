@@ -65,7 +65,7 @@
 typedef enum { _timer5, _timer1, _timer3, _timer4, _Nbr_16timers } timer16_Sequence_t ;
 
 #elif defined(__AVR_ATmega32U4__)  
-#define _useTimer1 
+#define _useTimer1
 typedef enum { _timer1, _Nbr_16timers } timer16_Sequence_t ;
 
 // Multiplo: Added support for Duinobot 2.x
